@@ -1,0 +1,36 @@
+def trianglegriddraw(startxcoord,startycoord)  #Each side 20px
+    print(Drawing code 3)
+    y_mod = 0
+    background = Rectangle(Point(startxcoord,startycoord),Point(startxcoord+100,startycoord+100))
+    background.setFill(White)
+    background.setOutline(White)
+    background.draw(win)
+    for x in range(0,5)    #Each Column
+        y_mod = y_mod + 20      
+        trianglerefcoordx = startxcoord
+        trianglerefcoordy = startycoord
+        trianglerefcoordy = trianglerefcoordy + y_mod
+        
+        if x % 2 == 1
+            for i in range(0,6)
+                x_mod = 20
+                triangleleftpoint = Point(trianglerefcoordx-10,trianglerefcoordy)
+                triangletoppoint = Point(triangleleftpoint.getX()+10,triangleleftpoint.getY()-20)
+                trianglerightpoint = Point(triangleleftpoint.getX()+20,triangleleftpoint.getY())
+
+                fulltriangle = Polygon(triangleleftpoint,triangletoppoint,trianglerightpoint)
+                fulltriangle.setFill(Red)
+                fulltriangle.draw(win)
+
+                trianglerefcoordx = trianglerefcoordx + x_mod
+        else
+            for i in range(0,5)
+                x_mod = 20
+                triangleleftpoint = Point(trianglerefcoordx,trianglerefcoordy) #Origin of triangle
+                triangletoppoint = Point(triangleleftpoint.getX()+10,triangleleftpoint.getY()-20)
+                trianglerightpoint = Point(triangleleftpoint.getX()+20,triangleleftpoint.getY())
+
+                fulltriangle = Polygon(triangleleftpoint,triangletoppoint,trianglerightpoint)
+                fulltriangle.setFill(Red)
+                fulltriangle.draw(win)
+                trianglerefcoordx = trianglerefcoordx + x_mod
